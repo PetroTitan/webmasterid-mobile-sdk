@@ -1,0 +1,458 @@
+WEBMASTERID SDK LICENSE AGREEMENT
+Version 1.0
+
+This WebmasterID SDK License Agreement (the "Agreement") is between HELPERG LLC, a
+Wyoming, United States limited liability company with a registered address at 30 N Gould St
+Ste N, Sheridan, WY 82801, United States ("HELPERG", "we", "us"), and the
+individual or organisation that downloads, integrates or distributes the SDK Binaries
+("you").
+
+1. Acceptance
+
+1.1 By downloading the SDK Binaries, adding them to an application, or distributing an
+application that contains them, you accept this Agreement. If you do not accept it, do not
+download, integrate or distribute the SDK Binaries.
+
+1.2 If you accept this Agreement on behalf of an organisation, you represent that you have
+authority to bind it, and "you" means that organisation.
+
+1.3 This Agreement is published with each release of the SDK Binaries: in the public
+distribution repository for iOS, and at the address named in the Maven metadata of the
+Android artifacts.
+
+1.4 Sending data to the Service through the SDK Binaries is use of the Service, which the
+Service Terms govern. This Agreement governs the SDK Binaries themselves (section 23.1).
+
+2. Definitions
+
+2.1 "SDK Binaries" means the compiled WebmasterID software development kit components
+that HELPERG publishes under this Agreement, together with the interface, metadata,
+privacy-manifest, notice and documentation files published with them. They are:
+(a) for iOS, WebmasterID.xcframework and WebmasterIDStoreKit.xcframework, version 1.2.0
+and later;
+(b) for Android, the Maven artifacts com.webmasterid:webmasterid-core,
+com.webmasterid:webmasterid-android and com.webmasterid:webmasterid-googleplay, version
+0.2.0 and later; and
+(c) any other WebmasterID SDK component in binary form that HELPERG publishes with this
+Agreement.
+
+2.2 "Your App" means an application that you develop, that includes the SDK Binaries, and
+whose primary functionality is not the SDK Binaries themselves.
+
+2.3 "End User" means a person who obtains or uses Your App.
+
+2.4 "App Store" means the Apple App Store, Google Play and any other channel through which
+applications are distributed to End Users, including test channels such as TestFlight and
+Google Play testing tracks, and an organisation's private or enterprise app distribution.
+
+2.5 "Build Processing" means automated processing of Your App, including the SDK
+Binaries, by your build tools or by an App Store, for the purpose of building, packaging,
+optimising, signing, encrypting, thinning or distributing Your App. Examples include
+compiling and linking, code shrinking, optimisation and obfuscation such as R8 or ProGuard,
+app thinning, and re-signing by an App Store.
+
+2.6 "Service" means the WebmasterID hosted service operated by HELPERG, including the
+endpoints that receive data from the SDK Binaries.
+
+2.7 "Service Terms" means the WebmasterID Terms of Service published at
+https://webmasterid.com/terms, as they are amended in accordance with their own terms.
+
+2.8 "DPA" means a data processing agreement between you and HELPERG that both of you have
+signed. Where no such agreement exists, references to a DPA have no effect.
+
+2.9 "Documentation" means the integration and privacy documentation that HELPERG publishes
+with the SDK Binaries in their distribution channels, including their README files, privacy
+manifests and third-party notices.
+
+2.10 "Feedback" means suggestions, comments or ideas about the SDK Binaries that you
+choose to give HELPERG.
+
+2.11 "Marks" means the names "WebmasterID" and "HELPERG", and any logos, trademarks or
+service marks of HELPERG.
+
+2.12 "Customer Proxy" means a server or gateway, operated by you or by a service provider
+for you, that receives data from the SDK Binaries in Your App and forwards it to the Service.
+
+2.13 "Private Build Cache" means a cache, mirror or artifact repository that is not
+publicly accessible and that you, your contractors or your build services use to build your
+applications — for example a Maven proxy, a Swift Package Manager cache or a CI cache.
+
+2.14 "Dependency-Only Wrapper" means software that you distribute to other developers —
+for example a plugin for React Native, Unity, .NET MAUI or Capacitor — that does not contain
+the SDK Binaries but declares a dependency on them, so that each developer's build obtains
+the SDK Binaries from HELPERG's distribution channels.
+
+2.15 "Third-Party Components" means software, code or other material in or used by the SDK
+Binaries that HELPERG does not own, including open-source components, code that compilers
+copy from standard libraries into the SDK Binaries, and platform software of Apple, Google
+or others.
+
+2.16 "MIT Releases" means the versions of the WebmasterID Swift SDK distributed under the
+MIT License, including source releases 1.0.0, 1.0.1 and 1.1.0, and any other copy of
+WebmasterID code that you received under the MIT License.
+
+3. License grant
+
+3.1 Subject to this Agreement, HELPERG grants you a non-exclusive, worldwide,
+non-transferable (except under section 23.4) license, for as long as this Agreement is in
+effect, to:
+(a) use and reproduce the SDK Binaries to develop, build, test and support Your App;
+(b) integrate the SDK Binaries into Your App, including through Build Processing;
+(c) distribute the SDK Binaries to End Users in object-code form only as part of Your App,
+directly or through any App Store, including the App Store's own processing, re-signing and
+delivery of Your App; and
+(d) permit End Users to use the SDK Binaries only as part of their use of Your App.
+
+3.2 You may permit your employees and your contractors, including agencies that build Your App
+for you, to exercise the rights in section 3.1 on your behalf. You are responsible for their
+compliance with this Agreement.
+
+3.3 You may keep copies of the SDK Binaries in Private Build Caches.
+
+3.4 HELPERG charges no licence fee for the license in section 3.1. That license does not
+include use of the Service free of charge: sending data to the Service, and HELPERG's
+receipt, processing and display of it, are use of the Service, which the Service Terms and
+the plan that applies to your WebmasterID account govern, including that plan's fees and
+limits.
+
+4. Use with the Service
+
+4.1 The SDK Binaries are designed to send data from Your App to the Service. Your use of the
+Service, including an app property and the data the SDK Binaries send to it, is governed by
+the Service Terms and, where one exists, a DPA.
+
+4.2 You may configure the SDK Binaries to send data only to: (a) the Service; (b) a Customer
+Proxy; or (c) for development and testing, an endpoint that HELPERG operates for you, or an
+endpoint that you operate only to inspect or test the traffic of the SDK Binaries.
+
+4.3 You are responsible for a Customer Proxy and for data while it is in a Customer Proxy.
+HELPERG is not responsible for data that a Customer Proxy alters, delays, loses or retains,
+and data reaches the Service only when the Customer Proxy delivers it.
+
+5. Restrictions
+
+Except as this Agreement expressly permits, or as applicable law permits despite this
+limitation (section 8.1(a)), you will not, and will not permit anyone else to:
+(a) distribute, sell, rent, lease or lend the SDK Binaries on their own, or otherwise than as
+section 6 allows;
+(b) sublicense the SDK Binaries, except as section 7 allows;
+(c) modify, adapt or translate the SDK Binaries, except through Build Processing;
+(d) decompile, disassemble or reverse engineer the SDK Binaries, except as section 8 allows;
+(e) remove, alter or obscure any copyright, license, attribution or third-party notice in or
+published with the SDK Binaries;
+(f) circumvent any technical limitation in the SDK Binaries, including their consent and
+data-minimisation controls; or
+(g) use the SDK Binaries in violation of applicable law, including laws on privacy, consent
+and electronic communications, or in violation of the rules of an App Store through which
+Your App is distributed, to the extent those rules concern the SDK Binaries or the data they
+collect.
+
+6. Redistribution
+
+6.1 You may not distribute the SDK Binaries on their own, re-host or mirror them publicly,
+publish them in a public package registry, or include them in any software development kit,
+library, framework, plugin, wrapper or developer tool that you distribute to other
+developers.
+
+6.2 Section 6.1 does not restrict:
+(a) distribution as part of Your App under section 3.1;
+(b) copies in Private Build Caches under section 3.3;
+(c) software that HELPERG itself publishes for developers, such as the webmasterid_flutter
+package, which retrieves the SDK Binaries from HELPERG's channels when Your App is built; or
+(d) a Dependency-Only Wrapper, provided that it does not contain, re-host or modify the SDK
+Binaries, does not suggest that HELPERG made or endorses it (section 13), and tells its users
+that the SDK Binaries it obtains are licensed under this Agreement. Each developer whose build
+obtains the SDK Binaries through a Dependency-Only Wrapper is a licensee under this Agreement.
+Your own code in the wrapper is licensed under the terms you choose.
+
+6.3 HELPERG may permit, in writing, other software that redistributes the SDK Binaries.
+
+7. Sublicensing
+
+You may not sublicense the SDK Binaries. Distribution under section 3.1(c), use by End Users
+under section 3.1(d), and use by your employees and contractors under section 3.2 are not
+sublicensing for the purpose of this section and need no further permission. Nor is granting
+an App Store, for the SDK Binaries as part of Your App, the permissions its distribution
+agreement with you requires — for example to copy, review, analyse, process, re-sign and
+deliver Your App — which section 3.1(c) allows.
+
+8. Reverse engineering
+
+8.1 Section 5(d) does not apply:
+(a) to the extent that applicable law gives you a right that cannot be excluded or limited by
+contract — for example, in the European Union, the rights to observe, study or test the
+functioning of a program, to make a back-up copy, and to decompile it to achieve
+interoperability (Articles 5 and 6 of Directive 2009/24/EC). Nothing in this Agreement
+excludes or limits such a right; any conditions that the law attaches to it apply;
+(b) to Build Processing;
+(c) to inspecting the behaviour of the SDK Binaries within Your App for debugging,
+integration, performance, privacy, security or compliance purposes — for example reading
+their logs and network traffic, using symbol files that HELPERG provides, or reading their
+published interface files and privacy manifests; or
+(d) to good-faith security research, provided you report any vulnerability to HELPERG
+privately as described in the security policy published with the SDK Binaries, and do not
+disclose it publicly before HELPERG has fixed it or 90 days have passed since your
+report, whichever is earlier, unless the law requires earlier disclosure.
+
+8.2 The SDK Binaries contain no secret, and compiled code can be inspected. This section
+governs what you may do contractually; it is not a security measure.
+
+9. Third-Party Components
+
+9.1 Third-Party Components are licensed under their own terms, which are identified in the
+notices published with the SDK Binaries, including notices inside the SDK Binaries. Those
+terms govern the Third-Party Components, and this Agreement does not restrict any right they
+give you.
+
+9.2 Software that the SDK Binaries require but that is not included in them — for example the
+Kotlin standard library — is obtained by your own build under its own license.
+
+9.3 The webmasterid_flutter package is licensed under its own license (BSD 3-Clause), not
+under this Agreement.
+
+10. Earlier releases under the MIT License
+
+10.1 Nothing in this Agreement revokes, limits or changes any right granted under the MIT
+License for the MIT Releases. HELPERG does not, and does not claim to, withdraw those rights.
+
+10.2 Where the SDK Binaries contain code that you have also received under the MIT License,
+you may use that code under the MIT License, and this Agreement does not limit your rights in
+it.
+
+10.3 This Agreement applies to the SDK Binaries as distributed under it. It does not apply to
+the MIT Releases.
+
+11. Ownership
+
+As between you and HELPERG, HELPERG or its licensors own the SDK Binaries and the
+Documentation, except Third-Party Components and code that section 10 covers, which remain
+the property of their respective owners under their own terms. HELPERG claims no ownership
+of Third-Party Components or of Your App. No right is granted to you except as this
+Agreement expressly states.
+
+12. Feedback
+
+If you give HELPERG Feedback, you grant HELPERG a non-exclusive, worldwide, perpetual,
+irrevocable, royalty-free license to use, disclose and exploit it for any purpose, without
+obligation or compensation to you. You are not required to give Feedback, and HELPERG is not
+required to use it.
+
+13. Trademarks
+
+13.1 This Agreement grants no right to use the Marks.
+
+13.2 You may state truthfully, in Your App's descriptions, documentation and privacy notices,
+and in the documentation of a Dependency-Only Wrapper, that your software uses or works with
+WebmasterID, provided that you do not use the Marks in a way that suggests that HELPERG
+made, sponsors, endorses or certifies your software.
+
+14. Privacy and data collection
+
+14.1 When Your App runs the SDK Binaries, they collect and send to the Service the data
+described in the Documentation and declared in the privacy manifests published with the SDK
+Binaries, in accordance with the consent state that Your App sets through the SDK Binaries.
+
+14.2 You are responsible for:
+(a) giving End Users the notices, and obtaining the consents, that applicable law requires
+for the data that Your App, including the SDK Binaries, collects;
+(b) setting the consent state in the SDK Binaries accordingly;
+(c) the accuracy of the privacy disclosures you make for Your App, including in App Store
+Connect and in the Google Play Data safety form;
+(d) not passing to the SDK Binaries, as an account key or other value, information that
+directly identifies an End User, such as an e-mail address or a telephone number, except as
+the Documentation allows; and
+(e) deciding whether you may use the SDK Binaries in Your App if it is directed at children.
+HELPERG has not assessed the SDK Binaries for apps directed at children, for Apple's Kids
+category or for Google Play's Families program, and makes no statement that they meet those
+requirements.
+
+14.3 Data that the Service receives from Your App is processed under the Service Terms and,
+where you and HELPERG have signed one, a DPA. If your use of the Service requires a data
+processing agreement, you are responsible for concluding one with HELPERG before you send
+personal data to the Service; HELPERG's data-processing page explains how to request one.
+
+15. Updates; no support or service levels
+
+15.1 HELPERG may publish new versions of the SDK Binaries but is not required to. A published
+version is never changed; a correction is published as a new version.
+
+15.2 This Agreement includes no obligation to provide support, maintenance, updates, security
+fixes, availability or any service level for the SDK Binaries. Support or a service level
+exists only where HELPERG has agreed to it in writing for your WebmasterID account.
+
+15.3 Each version of the SDK Binaries is governed by the version of this Agreement published
+with it.
+
+16. Term and termination
+
+16.1 This Agreement applies from your acceptance until it is terminated.
+
+16.2 You may terminate this Agreement at any time by ceasing to use and distribute the SDK
+Binaries.
+
+16.3 HELPERG may terminate this Agreement by written notice if you materially breach it and
+do not cure the breach within thirty (30) days after the notice, or immediately if the breach
+cannot be cured or concerns section 5(f), section 5(g), section 20 or section 21.
+
+16.4 After termination:
+(a) you must not add the SDK Binaries to a new application, or to a version of Your App
+released more than 90 days after termination;
+(b) during that period you may continue to distribute versions of Your App released before
+termination;
+(c) you are not required to recall, disable or remove copies of Your App that End Users have
+already installed, and End Users may continue to use them; and
+(d) termination of this Agreement does not by itself oblige HELPERG to keep accepting data
+from the SDK Binaries in Your App; the Service Terms govern your use of the Service.
+Where termination is for a breach of section 20, distribution that the laws referred to there
+prohibit must stop immediately.
+
+16.5 Sections 5, 6, 7, 9, 10, 11, 12, 13, 14, 16.4, 17, 18, 19, 20, 22, 23 and 24 survive
+termination.
+
+17. Warranty disclaimer
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SDK BINARIES AND THE DOCUMENTATION ARE
+PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED
+OR STATUTORY, INCLUDING ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+TITLE, NON-INFRINGEMENT, OR THAT THE SDK BINARIES WILL BE ERROR-FREE OR UNINTERRUPTED, OR
+THAT DATA COLLECTED THROUGH THEM WILL BE ACCURATE OR COMPLETE.
+
+18. Limitation of liability
+
+18.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HELPERG IS NOT LIABLE FOR INDIRECT,
+INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES ARISING OUT OF OR RELATING
+TO THIS AGREEMENT OR THE SDK BINARIES.
+
+18.2 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HELPERG'S AGGREGATE LIABILITY ARISING
+OUT OF OR RELATING TO THIS AGREEMENT OR THE SDK BINARIES WILL NOT EXCEED THE AMOUNT PAID BY
+YOU FOR THE SERVICE IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM,
+OR USD 100 WHERE THE SERVICE HAS BEEN PROVIDED FREE OF CHARGE.
+
+18.3 The limit in section 18.2 and the limit of liability in the Service Terms are one
+aggregate limit, not separate limits: an amount for which HELPERG is liable under either
+document counts toward both.
+
+18.4 Nothing in this Agreement limits liability that cannot be limited under applicable law.
+
+19. Indemnification
+
+19.1 You will defend, indemnify and hold harmless HELPERG and its members, managers,
+employees and agents against third-party claims, and against the losses, damages,
+settlement amounts, fines and penalties (to the extent applicable law permits them to be
+indemnified) and costs, including reasonable legal fees, that result from them, to the
+extent the claim arises from:
+(a) your breach of section 5, 6, 14.2, 20 or 21; or
+(b) data that you cause the SDK Binaries to collect or send in breach of applicable law.
+
+19.2 Section 19.1 does not apply to the extent a claim arises from:
+(a) the SDK Binaries as HELPERG provides them, used in accordance with this Agreement and the
+Documentation;
+(b) Your App other than its use of the SDK Binaries — a third-party claim against Your App
+that does not concern the SDK Binaries or the data they collect is neither indemnified by
+you under this Agreement nor HELPERG's liability;
+(c) HELPERG's breach of this Agreement, the Service Terms or a DPA;
+(d) HELPERG's negligence or wilful misconduct; or
+(e) HELPERG's processing of data in the Service other than as the Service Terms or a DPA
+permit.
+
+19.3 HELPERG will give you prompt written notice of a claim, allow you to control its defence
+and settlement (but you may not settle a claim in a way that imposes an obligation or an
+admission on HELPERG without its consent), and provide reasonable cooperation at your
+expense.
+
+19.4 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOUR AGGREGATE OBLIGATIONS UNDER THIS SECTION 19, INCLUDING DEFENCE COSTS, LEGAL FEES AND
+COOPERATION EXPENSES, WILL NOT EXCEED THE AMOUNT PAID BY YOU FOR THE SERVICE IN THE TWELVE (12) MONTHS
+PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR USD 100 WHERE THE SERVICE HAS BEEN PROVIDED
+FREE OF CHARGE. Nothing in this section limits an obligation that cannot be limited under
+applicable law.
+
+19.5 HELPERG gives no intellectual-property indemnity for the SDK Binaries under this
+Agreement. Any such indemnity for paying customers is stated in a separate written agreement.
+
+20. Export control and sanctions
+
+20.1 You will comply with all export-control and sanctions laws that apply to the SDK
+Binaries and Your App, including those of the United States.
+
+20.2 You will not use, export, re-export or distribute the SDK Binaries, or Your App
+containing them: (a) to any country, region or person subject to comprehensive sanctions or
+an embargo under those laws; (b) to any person on a restricted-party list under those laws;
+or (c) for any end use those laws prohibit.
+
+20.3 You represent that you are not a person described in section 20.2(a) or 20.2(b).
+
+21. Compliance with laws
+
+You will use the SDK Binaries in compliance with all laws that apply to your use of them,
+including laws on privacy and data protection.
+
+22. Governing law and disputes
+
+22.1 This Agreement is governed by the laws of the State of Wyoming, United States, without
+regard to its conflict-of-laws principles.
+
+22.2 Disputes arising out of or relating to this Agreement will be resolved in the state or
+federal courts located in the United States.
+
+22.3 Either party may seek urgent injunctive or other equitable relief in any court of
+competent jurisdiction to protect its intellectual property or confidential information.
+
+22.4 The United Nations Convention on Contracts for the International Sale of Goods does not
+apply to this Agreement.
+
+23. Order of precedence; general
+
+23.1 Order of precedence.
+(a) For the SDK Binaries — the license, its conditions and restrictions, and the rights in
+them — this Agreement governs.
+(b) For the Service — your account, plans, fees and limits, and the processing of the data
+that the Service receives — the Service Terms govern, and for personal data a DPA governs
+where one exists.
+(c) If a provision of this Agreement and a provision of the Service Terms cannot both be
+complied with, the document that governs the subject under (a) or (b) prevails.
+(d) For the SDK Binaries, this Agreement is HELPERG's permission under section 3 of the
+Service Terms to redistribute them as this Agreement allows; and section 8 applies to the
+SDK Binaries notwithstanding any restriction on reverse engineering in the Service Terms.
+
+23.2 Entire agreement. This Agreement, together with the documents it refers to, is the
+entire agreement between you and HELPERG about the SDK Binaries and supersedes any prior
+understanding about them.
+
+23.3 Severability. If any provision of this Agreement is held invalid or unenforceable,
+it will be enforced to the maximum extent permissible, and the remaining provisions remain
+in full force and effect.
+
+23.4 Assignment. You may not assign or transfer this Agreement without HELPERG's prior
+written consent, except to a successor to all or substantially all of the business or assets
+relating to Your App. HELPERG may assign this Agreement to an affiliate or to a successor to
+the business of the Service. Any other assignment is void.
+
+23.5 No waiver. A failure or delay in enforcing a provision is not a waiver of it.
+
+23.6 Notices. Notices to HELPERG must be sent to the contact address given in section 10
+of the Service Terms, or by post to HELPERG's address above. HELPERG may give you notice
+through the WebmasterID account associated with Your App, by e-mail to its account address,
+or by publication in the SDK Binaries' release notes.
+
+23.7 Relationship. The parties are independent contractors. This Agreement creates no
+partnership, agency or employment relationship and no third-party beneficiary rights.
+
+23.8 Government end users. The SDK Binaries are "commercial computer software" and are
+provided to government end users only with the rights granted to all other licensees under
+this Agreement.
+
+23.9 Language. This Agreement is written in English. A translation is provided for
+convenience only; the English version controls.
+
+24. Changes to this Agreement
+
+24.1 HELPERG may publish a new version of this Agreement with a new version of the SDK
+Binaries. The new version applies to that and later versions of the SDK Binaries.
+
+24.2 A new version of this Agreement does not apply to a version of the SDK Binaries that you
+already use unless you accept it, for example by upgrading to a version published with it.
+
+25. Contact
+
+HELPERG LLC, 30 N Gould St Ste N, Sheridan, WY 82801, United States. Questions about this
+Agreement: the contact address given in section 10 of the Service Terms.
