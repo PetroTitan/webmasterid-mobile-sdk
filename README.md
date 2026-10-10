@@ -46,19 +46,43 @@ targets: [
 ```swift
 import WebmasterID
 
-// Your property's PUBLIC id from the WebmasterID dashboard. It ships inside
-// your app; it addresses your property and is not a credential.
+// Your property's PUBLIC id from the WebmasterID dashboard (the app's card). It
+// ships inside your app; it addresses your property and is not a credential.
 let client = WebmasterIDClient(
-    configuration: try WebmasterIDConfiguration(appPropertyID: "ap_xxxxxxxxxxxxxxxx", consent: .notDetermined)
+    configuration: try WebmasterIDConfiguration(appPropertyID: "ap_YOUR_PROPERTY_ID", consent: .notDetermined)
 )
-await client.setConsent(.analyticsAllowed)          // nothing is collected before this
-try await client.identify(externalUserID: "<your-account-key>")   // never an e-mail
-try await client.track(.screenView, context: .init(screen: "BookingDetail"))
+await client.setConsent(.analyticsAllowed)   // when the person decides — nothing is collected before
+try await client.identify(externalUserID: "<your-account-key>")   // only with sign-in; never an e-mail
+try await client.track(.screenView, context: .init(screen: "BookingDetail"))   // queued on the device
 ```
 
+**Delivery.** `track` only queues. The SDK sends what is queued **only** when
+your app calls `flush()` or forwards the background transition — there is no
+timer, no send at launch and no automatic retry. Forward the lifecycle
+(SwiftUI):
+
+```swift
+@Environment(\.scenePhase) private var scenePhase
+
+.onChange(of: scenePhase) { phase in
+    Task {
+        switch phase {
+        case .active:     await client.applicationDidBecomeActive()
+        case .background: await client.applicationDidEnterBackground()
+        default: break
+        }
+    }
+}
+```
+
+To check the first event once while integrating, `await client.flush()` and
+read `await client.diagnostics()`: `acknowledged` at least 1 and
+`lastStatusCategory` `.success`. Do not flush after every event — events are
+sent in batches.
+
 The WebmasterID dashboard shows these steps for your own property, including the
-lifecycle, sign-out and in-app purchase snippets, and tells you when the first
-event has arrived.
+sign-out and in-app purchase snippets, and tells you when the first event has
+arrived. The installation guide explains what each diagnostics value means.
 
 **In-app purchases (1.2.0).** A purchase is attributed to a user only when the
 `appAccountToken` Apple signed into the transaction equals the one registered
