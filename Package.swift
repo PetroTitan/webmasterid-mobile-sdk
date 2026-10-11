@@ -1,6 +1,6 @@
 // swift-tools-version: 5.9
 //
-// WebmasterID iOS SDK 1.2.0 — binary distribution.
+// WebmasterID iOS SDK 1.3.0 — binary distribution.
 //
 // GENERATED from the release's build manifest. Each URL is an immutable
 // release asset and each checksum is the SHA-256 SwiftPM verifies before it
@@ -25,13 +25,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "WebmasterID",
-            url: "https://github.com/PetroTitan/webmasterid-mobile-sdk/releases/download/1.2.0/WebmasterID.xcframework.zip",
-            checksum: "aeb53c747cb5fe6e6662f7eba5e464ea491ddfe4ca036f7360a7b8a0365d1b39"
+            url: "https://github.com/PetroTitan/webmasterid-mobile-sdk/releases/download/1.3.0/WebmasterID.xcframework.zip",
+            checksum: "577c27d345c0b6dff3005890492d4f92f111f544b67f5a6a4a843909f8553962"
         ),
         .binaryTarget(
             name: "WebmasterIDStoreKit",
-            url: "https://github.com/PetroTitan/webmasterid-mobile-sdk/releases/download/1.2.0/WebmasterIDStoreKit.xcframework.zip",
-            checksum: "c0d42d566f18c54c9bc7a73e15fc36ffab3a7d6e34e78b872f50c220eed5f24d"
+            url: "https://github.com/PetroTitan/webmasterid-mobile-sdk/releases/download/1.3.0/WebmasterIDStoreKit.xcframework.zip",
+            checksum: "8c02f4903d93bba4bd226dbd8e18ebd191c76550c2ff8eac320d3e2e5ccfd684"
         ),
     ]
 )

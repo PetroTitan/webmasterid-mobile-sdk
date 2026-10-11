@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.3.0 — 2026-10-11
+
+### Events leave on their own
+
+Through 1.2.0 `track` only wrote to disk: nothing sent an event unless the app
+called `flush()` or forwarded a background transition, so an iOS app that did
+neither kept its events on the device, across launches.
+
+- **Automatic delivery.** The first queued event arms ONE delivery
+  `autoFlushDelay` (5 s) later; events queued meanwhile join it and never push
+  it back. `autoFlushDelay: 0` restores the 1.2.0 behaviour.
+- **Lifecycle observed by the client** where UIKit exists: going to the
+  background delivers at once inside `ProcessInfo.performExpiringActivity`
+  (extension-safe); coming back arms a delivery for anything still queued.
+  Nothing promises delivery after suspension, force-quit or termination —
+  unsent events stay on disk and go out when the app next runs. Calls a host
+  already makes (`applicationDidEnterBackground()`) remain harmless.
+- **Startup resume.** A queue an earlier launch left is armed at startup —
+  after the consent decision and the identity restore, never before them.
+- **Retries are real** — while the app runs. A transport error or a 5xx arms
+  its retry: full jitter, at least 1 s, capped at 300 s. A 429 waits for its
+  full `Retry-After` (at least 1 s; bounded only by the 7-day event age, never
+  by a shorter local cap); an explicit `flush()` inside that window is the
+  host's decision and sends at once. **No stop after `maxDeliveryAttempts`**
+  any more: a phone offline for minutes recovers without a relaunch. A
+  suspended or terminated app runs no timer; its events go out after it next
+  runs. A 403 still stops delivery for the
+  launch, keeps the events, and asks again on the next launch.
+- **One delivery at a time.** A concurrent `flush()`, the automatic delivery
+  and a background transition join the delivery already running instead of
+  returning `false`; a cancelled caller cancels it and the rest is re-armed.
+- **Diagnostics that do not claim what is not true.** `retryState` is
+  `.scheduled` only while a retry is armed, with the time left;
+  `nextAutomaticDeliveryAt` is new. The counters are documented as this
+  process's: `queued` 2 with `queuedEvents` 21 after a relaunch is normal.
+- Configuration gains `autoFlushDelay`, `lifecycle` and `scheduler`;
+  `WebmasterIDRandomSource` gains `jitter()` with a default. Additive and
+  source-compatible.
+
 ## 1.2.0
 
 First binary release. Same public API as 1.1.0, plus:
