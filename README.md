@@ -31,7 +31,7 @@ to your app target — **WebmasterIDStoreKit** only if your app sells something.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/PetroTitan/webmasterid-mobile-sdk.git", from: "1.3.0")
+    .package(url: "https://github.com/PetroTitan/webmasterid-mobile-sdk.git", from: "1.3.1")
 ],
 targets: [
     .target(

@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.1 — 2026-10-12
+
+### Fixed: the WebmasterIDStoreKit privacy manifest is valid XML
+
+App Store Connect refused uploads of apps embedding `WebmasterIDStoreKit` 1.3.0
+with **ITMS-91056** at `Frameworks/WebmasterIDStoreKit.framework/PrivacyInfo.xcprivacy`:
+a comment inside the manifest contained `--`, which XML forbids. Only that
+comment is corrected. The declarations are unchanged — Purchase History and
+User ID, linked to the user, not used for tracking, purpose analytics; no
+tracking; no required-reason API — and nothing else changed from 1.3.0: no
+runtime, API, consent or delivery change. Apps that embed only `WebmasterID`
+were not affected.
+
+Update to `from: "1.3.1"`, or let `from: "1.3.0"` resolve to 1.3.1 with
+File → Packages → Update to Latest Package Versions, then upload again.
+
 ## 1.3.0 — 2026-10-11
 
 ### Events leave on their own
